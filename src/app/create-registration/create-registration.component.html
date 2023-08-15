@@ -1,0 +1,106 @@
+<div class="logo text-center">
+  <!-- <img src="../../assets/img-removebg-preview.png" alt="" width="300px" > -->
+</div>
+
+<div class="registration-form m-3 p-4">
+  <form class="row g-3" [formGroup]="gymForm">
+    <div class="col-md-6">
+      <label class="form-label">FirstName</label>
+      <input type="text" class="form-control" placeholder="FirstName" formControlName="firstname" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">LastName</label>
+      <input type="text" class="form-control" placeholder="LastName" formControlName="lastname" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Email" formControlName="email" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">Mobile</label>
+
+      <input type="number" class="form-control" placeholder="Mobile" formControlName="mobile" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">Weight</label>
+
+      <input type="number" class="form-control" placeholder="Weight" formControlName="weight" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">Height</label>
+
+      <input [readonly]="!this.gymForm.value?.weight" type="number" class="form-control" placeholder="Height"
+        formControlName="height" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">BMI</label>
+
+      <input readonly type="text" class="form-control" placeholder="BMI" formControlName="bmi" />
+    </div>
+    <div class="col-6">
+      <label class="form-label">BMI Result</label>
+
+      <input readonly type="text" class="form-control" placeholder="BMI Result" formControlName="bmiResult" />
+    </div>
+    <div class="col-6">
+      <h4>Select Your Gender</h4>
+      <div class="form-check" *ngFor="let gender of genders">
+        <input class="form-check-input" type="radio" formControlName="gender" [value]="gender" />
+        <label class="form-check-label" for="gridCheck">
+          {{ gender }}
+        </label>
+      </div>
+    </div>
+    <div class="col-6">
+      <h4>Do you required Trainer?</h4>
+      <div class="form-check" *ngFor="let traineropt of ['Yes', 'No']">
+        <input class="form-check-input" type="radio" formControlName="requiredTrainer" [value]="traineropt" />
+        <label class="form-check-label" for="gridCheck">
+          {{ traineropt }}
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Select Packages</label>
+
+      <select class="form-select" formControlName="packages">
+        <option disabled selected>Select Packages</option>
+        <option *ngFor="let package of packages">{{ package }}</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Which of the following is important to you?</label>
+      <select class="form-select" formControlName="important">
+        <option disabled selected>
+          Which of the following is important to you?
+        </option>
+        <option *ngFor="let importantList of importantLists">
+          {{ importantList }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <h4>Have Been Gym Before?</h4>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="havegtmBefore" value="Yes" />
+        <label class="form-check-label" for="gridRadios1"> Yes </label>
+        <div>
+          <input class="form-check-input" type="radio" formControlName="havegtmBefore" value="No" />
+          <label class="form-check-label" for="gridRadios1"> No </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Date of Joining</label>
+      <input type="date" id="birthday" class="form-control" name="birthday" formControlName="enquiryDate" />
+    </div>
+    <button *ngIf="!isUpdateisActive" (click)="onSubmit()" type="submit" class="btn btn-primary">
+      Sign in
+    </button>
+    //true
+    <button *ngIf="isUpdateisActive" (click)="onUpdate()" type="submit" class="btn btn-warning">
+      Update
+    </button>
+    //flase
+  </form>
+</div>

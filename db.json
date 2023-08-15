@@ -1,0 +1,38 @@
+{
+  "enquiry": [
+    {
+      "firstname": "joye",
+      "lastname": "ymi",
+      "email": "joye@gmail.com",
+      "mobile": 84958394534,
+      "weight": 23,
+      "height": 32,
+      "bmi": 0.0224609375,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requiredTrainer": "Yes",
+      "packages": "Yearly",
+      "important": "Building Lean Muscle",
+      "havegtmBefore": "Yes",
+      "enquiryDate": "2023-07-30",
+      "id": 5
+    },
+    {
+      "firstname": "asd",
+      "lastname": "asd",
+      "email": "ad@gmail.com",
+      "mobile": 93422934,
+      "weight": 349,
+      "height": 93,
+      "bmi": 0.04035148572089259,
+      "bmiResult": "Underweight",
+      "gender": "Female",
+      "requiredTrainer": "No",
+      "packages": "Quarterly",
+      "important": "",
+      "havegtmBefore": "No",
+      "enquiryDate": "2023-08-18",
+      "id": 6
+    }
+  ]
+}
